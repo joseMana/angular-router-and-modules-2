@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+      <div class="mx-auto w-50 p-3 text-center">
+          <h1 class="text-center text-white login-title">Register continue to the Magenic Master App</h1>
+          <div class="account-wall">
+              <form (ngSubmit)="form.form.valid && register()" #form="ngForm" class="form-signin">
+                  <div class="form-group mb-4">
+                      <input type="email" class="form-control" placeholder="Username" value="" name="name"
+                          [(ngModel)]="username" #name="ngModel"
+                          [ngClass]="{ 'is-invalid': form.submitted && name.invalid }" required />
+                  </div>
+                  <div class="form-group">
+                      <input type="password" class="form-control" placeholder="Password" name="pass"
+                          [(ngModel)]="password" #pass="ngModel"
+                          [ngClass]="{ 'is-invalid': form.submitted && pass.invalid }" required />
+                  </div>
+                  <div class="text-center mt-4">
+                      <button type="submit" class="btn btn-success">Sign-up</button>
+                      <p class="p-3">Already have an account?
+                          <a [routerLink]="['/', 'login']" style="cursor: pointer"
+                              class="text-green">Login</a>
+                      </p>
+                  </div>
+              </form>
+          </div>
+          <a href="#" class="text-center new-account">Forgot Password?</a>
+      </div>
+  </div>
+</div>
